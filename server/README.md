@@ -116,24 +116,6 @@ Profiles are defined in `presentation/pom.xml`:
 | `production` | `-Denv=production` | Derby |
 | `docker` | `-Denv=docker` | PostgreSQL (container hostname `postgres`) |
 
-### MongoDB JDBC connectivity
-
-MongoDB can be configured as a datasource using the Helical MongoDB JDBC driver.
-
-The implementation adds:
-- MongoDB JDBC driver `3.0.8`
-- Helical adapter class `com.helical.mongodb.MongoJdbcDriver`
-- JDBC URL pattern `jdbc:mongodb://{{hostName}}:{{port}}/{{database}}`
-
-To configure a MongoDB datasource in Helical Insight:
-1. Start a MongoDB server and note its host, port, and database name.
-2. In the datasource configuration, select `com.helical.mongodb.MongoJdbcDriver`.
-3. Use a JDBC URL such as `jdbc:mongodb://localhost:27017/mydatabase`.
-4. Provide username/password when authentication is enabled.
-5. Test the connection from the datasource configuration screen.
-
-The required driver JARs are located under `hi-repository/System/Drivers/`.
-
 ### Default application users
 
 On first startup against an empty database, the application creates:
